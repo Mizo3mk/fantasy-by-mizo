@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Coach - ملك التكتيك</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #004d00, #002600);
+            color: black;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: rgba(0, 77, 0, 0.9);
+            padding: 30px;
+            font-size: 50px;
+            font-weight: bold;
+            color: gold;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
+            animation: fadeIn 1s ease-in-out;
+            border-bottom: 5px solid gold;
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            margin: 15px auto;
+            border-radius: 15px;
+            width: 85%;
+            animation: fadeIn 1s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .button {
+            background: linear-gradient(to right, gold, orange);
+            color: black;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Fantasy Coach - ملك التكتيك</div>
+    <div class="container">
+        <div class="feature">
+            <h2>⚽ قم بإنشاء خطتك التكتيكية</h2>
+            <p>حدد التشكيلة، الأسلوب التكتيكي، واستعد للفوز بالمباريات.</p>
+            <a href="tactics.html" class="button">ابدأ الآن</a>
+        </div>
+        <div class="feature">
+            <h2>📊 تحليل الفرق</h2>
+            <p>تعرف على نقاط القوة والضعف في الفرق المنافسة واستعد بأفضل خطة.</p>
+            <a href="analytics.html" class="button">استكشف التحليلات</a>
+        </div>
+        <div class="feature">
+            <h2>🏆 تحديات تكتيكية</h2>
+            <p>واجه اختبارات تدريبية حقيقية وقم باتخاذ القرارات الصحيحة.</p>
+            <a href="challenges.html" class="button">ابدأ التحدي</a>
+        </div>
+    </div>
+    <footer style="margin-top: 20px; padding: 15px; background: rgba(0, 0, 0, 0.8); color: white; font-size: 14px;">
+        <p>تم التطوير بواسطة: <strong>moaaz helmy</strong></p>
+        <p>📧 البريد الإلكتروني: <a href="mailto:moaazmahmoud.756@gmail.com" style="color: gold; text-decoration: none;">moaazmahmoud.756@gmail.com</a></p>
+    </footer>
+</body>
+</html>
