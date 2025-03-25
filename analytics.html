@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نسبة الفوز بدوري الأبطال 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #001F3F, #003366);
+            color: white;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: rgba(0, 31, 63, 0.9);
+            padding: 30px;
+            font-size: 50px;
+            font-weight: bold;
+            color: gold;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
+            border-bottom: 5px solid gold;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .chart-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">🏆 نسبة الفوز بدوري الأبطال 2025</div>
+    <div class="container">
+        <div class="chart-container">
+            <canvas id="championsChart"></canvas>
+        </div>
+    </div>
+    <script>
+        var ctx = document.getElementById('championsChart').getContext('2d');
+        var championsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['برشلونة', 'باريس سان جيرمان', 'ريال مدريد', 'آرسنال', 'بايرن ميونخ'],
+                datasets: [{
+                    label: 'نسبة الفوز %',
+                    data: [30, 25, 20, 15, 10],
+                    backgroundColor: ['darkblue', 'pink', 'white', 'blue', 'red'],
+                    borderColor: 'black',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: 'black' }
+                    },
+                    x: {
+                        ticks: { color: 'black' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
