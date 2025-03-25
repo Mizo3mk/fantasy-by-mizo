@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تكتيكات كرة القدم</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #004d00, #001a00);
+            color: white;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            color: gold;
+            text-shadow: 3px 3px 10px rgba(255, 215, 0, 0.8);
+            border-bottom: 3px solid gold;
+        }
+        .field {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            height: 400px;
+            margin: 40px auto;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/3/36/Football_pitch.svg') no-repeat center center;
+            background-size: cover;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+        }
+        .player {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            background-color: white;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid black;
+            transition: transform 0.5s ease-in-out;
+        }
+        select {
+            padding: 10px;
+            font-size: 18px;
+            margin: 20px;
+            cursor: pointer;
+            background: black;
+            color: gold;
+            border: 2px solid gold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">⚽ خطط تكتيكية متغيرة ⚽</div>
+    <select id="formation" onchange="changeFormation()">
+        <option value="4-3-3">4-3-3</option>
+        <option value="4-4-2">4-4-2</option>
+        <option value="3-5-2">3-5-2</option>
+        <option value="5-3-2">5-3-2</option>
+        <option value="4-2-3-1">4-2-3-1</option>
+    </select>
+    <div class="field" id="field">
+        <div class="player" id="p1">1</div>
+        <div class="player" id="p2">2</div>
+        <div class="player" id="p3">3</div>
+        <div class="player" id="p4">4</div>
+        <div class="player" id="p5">5</div>
+        <div class="player" id="p6">6</div>
+        <div class="player" id="p7">7</div>
+        <div class="player" id="p8">8</div>
+        <div class="player" id="p9">9</div>
+        <div class="player" id="p10">10</div>
+        <div class="player" id="p11">11</div>
+    </div>
+    <script>
+        function changeFormation() {
+            const formation = document.getElementById('formation').value;
+            const players = [];
+            for (let i = 1; i <= 11; i++) {
+                players.push(document.getElementById(`p${i}`));
+            }
+            let positions = [];
+            if (formation === "4-3-3") {
+                positions = [[270, 350], [100, 280], [440, 280], [50, 180], [490, 180], [200, 220], [340, 220], [270, 150], [120, 80], [420, 80], [270, 30]];
+            } else if (formation === "4-4-2") {
+                positions = [[270, 350], [100, 280], [440, 280], [50, 180], [490, 180], [180, 220], [360, 220], [270, 150], [120, 80], [420, 80], [270, 60]];
+            } else if (formation === "3-5-2") {
+                positions = [[270, 350], [150, 280], [390, 280], [70, 180], [470, 180], [270, 250], [170, 200], [370, 200], [270, 150], [120, 80], [420, 80]];
+            } else if (formation === "5-3-2") {
+                positions = [[270, 350], [50, 280], [490, 280], [150, 280], [390, 280], [270, 250], [170, 200], [370, 200], [270, 150], [120, 80], [420, 80]];
+            } else {
+                positions = [[270, 350], [100, 280], [440, 280], [50, 180], [490, 180], [200, 220], [340, 220], [270, 200], [270, 150], [120, 80], [420, 80]];
+            }
+            players.forEach((player, index) => {
+                player.style.transform = `translate(${positions[index][0]}px, ${positions[index][1]}px)`;
+            });
+        }
+        changeFormation();
+    </script>
+</body>
+</html>
